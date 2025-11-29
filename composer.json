@@ -1,5 +1,5 @@
 {
-    "name": "Azima/laravel-esl",
+    "name": "azima/laravel-esl",
     "description": "A Laravel package for Azima ESL connection.",
     "keywords": [
         "esl",
@@ -7,7 +7,7 @@
         "event socket",
         "gsm"
     ],
-    "homepage": "https://github.com/Mahmoudalziem/azima-larave-esl",
+    "homepage": "https://github.com/Mahmoudalziem/Azima-larave-esl",
     "type": "library",
     "license": "MIT",
     "authors": [
