@@ -12,9 +12,9 @@
     "license": "MIT",
     "authors": [
         {
-            "name": "Md Mostafijur Rahman",
-            "email": "mostofa122@gmail.com",
-            "homepage": "https://mostofa.me",
+            "name": "Mahmoud Abd Alziem",
+            "email": "mbdalzym376@gmail.com",
+            "homepage": "https://azima.me",
             "role": "Developer"
         }
     ],
@@ -37,6 +37,6 @@
             }
         }
     },
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "prefer-stable": true
 }
