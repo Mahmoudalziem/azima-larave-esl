@@ -1,8 +1,8 @@
 <?php
 
-namespace Freeswitch\LaravelEsl;
+namespace Azima\LaravelEsl;
 
-use Freeswitch\LaravelEsl\EslConnectionErrors;
+use Azima\LaravelEsl\EslConnectionErrors;
 
 class EslConnection
 {
@@ -52,7 +52,7 @@ class EslConnection
         $this->socket = @fsockopen($this->host, $this->port, $errno, $errstr, 10);
         if (!$this->socket) {
             $errorDetails = EslConnectionErrors::getDescription($errno, $errstr);
-            throw new EslConnectionException("Unable to connect to FreeSWITCH ESL. $errorDetails");
+            throw new EslConnectionException("Unable to connect to Azima ESL. $errorDetails");
         }
 
         $this->authenticate();
@@ -69,14 +69,14 @@ class EslConnection
     {
         $response = $this->readResponse();
         if (strpos($response, 'Content-Type: auth/request') === false) {
-            throw new EslConnectionException('Failed to receive auth request from FreeSWITCH.');
+            throw new EslConnectionException('Failed to receive auth request from Azima.');
         }
 
         $this->sendCommand('auth ' . $this->password);
         $response = $this->readResponse();
 
         if (strpos($response, 'Content-Type: command/reply') === false || strpos($response, 'Reply-Text: +OK accepted') === false) {
-            throw new EslConnectionException('FreeSWITCH ESL authentication failed.');
+            throw new EslConnectionException('Azima ESL authentication failed.');
         }
     }
 

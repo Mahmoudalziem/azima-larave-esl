@@ -1,11 +1,11 @@
 # Laravel ESL
 
-A Laravel package for connecting to and interacting with a FreeSWITCH ESL (Event Socket Library) server.
+A Laravel package for connecting to and interacting with a Azima ESL (Event Socket Library) server.
 
 ## Features
 
-- Easy configuration for FreeSWITCH ESL connection details.
-- Fluent API for sending commands to FreeSWITCH.
+- Easy configuration for Azima ESL connection details.
+- Fluent API for sending commands to Azima.
 - Handles connection and authentication automatically.
 - Provides a `Esl` facade for convenient access.
 - Includes a custom exception for robust error handling.
@@ -16,7 +16,7 @@ A Laravel package for connecting to and interacting with a FreeSWITCH ESL (Event
 You can install the package via Composer:
 
 ```bash
-composer require Freeswitch/laravel-esl
+composer require Azima/laravel-esl
 ```
 
 The package will automatically register its service provider and facade.
@@ -26,10 +26,10 @@ The package will automatically register its service provider and facade.
 To publish the configuration file, run the following command:
 
 ```bash
-php artisan vendor:publish --provider="Freeswitch\LaravelEsl\LaravelEslServiceProvider"
+php artisan vendor:publish --provider="Azima\LaravelEsl\LaravelEslServiceProvider"
 ```
 
-This will create a `config/esl.php` file in your application's config directory. You can then configure your FreeSWITCH ESL connection details in your `.env` file:
+This will create a `config/esl.php` file in your application's config directory. You can then configure your Azima ESL connection details in your `.env` file:
 
 ```
 ESL_HOST=127.0.0.1
@@ -39,20 +39,20 @@ ESL_PASSWORD=ClueCon
 
 ## Usage
 
-You can interact with the FreeSWITCH ESL server in two primary ways:
+You can interact with the Azima ESL server in two primary ways:
 
 ### Using the `Esl` Facade
 
 The `Esl` facade provides a quick and easy way to send commands.
 
 ```php
-use Freeswitch\LaravelEsl\Facades\Esl;
-use Freeswitch\LaravelEsl\EslConnectionException;
+use Azima\LaravelEsl\Facades\Esl;
+use Azima\LaravelEsl\EslConnectionException;
 
 try {
     // Execute the 'status' command
     $response = Esl::execute('status');
-    echo "FreeSWITCH Status:\n";
+    echo "Azima Status:\n";
     print_r($response);
 
     // Originate a call
@@ -67,11 +67,11 @@ try {
 
 ### Using a Custom Connection
 
-For situations where you need to connect to a different FreeSWITCH server on-the-fly, you can use the `connection()` method before executing a command. This will not affect the default connection configuration.
+For situations where you need to connect to a different Azima server on-the-fly, you can use the `connection()` method before executing a command. This will not affect the default connection configuration.
 
 ```php
-use Freeswitch\LaravelEsl\Facades\Esl;
-use Freeswitch\LaravelEsl\EslConnectionException;
+use Azima\LaravelEsl\Facades\Esl;
+use Azima\LaravelEsl\EslConnectionException;
 
 try {
     // Use the default connection from your config
@@ -119,8 +119,8 @@ $uptime = Esl::execute('uptime');
 You can also type-hint the `EslConnection` class in your controllers or other classes to have it automatically injected by Laravel's service container.
 
 ```php
-use Freeswitch\LaravelEsl\EslConnection;
-use Freeswitch\LaravelEsl\EslConnectionException;
+use Azima\LaravelEsl\EslConnection;
+use Azima\LaravelEsl\EslConnectionException;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 
@@ -149,7 +149,7 @@ class CallController extends Controller
 
 ### Response Parsing
 
-Currently, the `execute` method returns the raw response body from the FreeSWITCH API command. Future versions will include a more sophisticated parser to return structured data.
+Currently, the `execute` method returns the raw response body from the Azima API command. Future versions will include a more sophisticated parser to return structured data.
 
 ## License
 

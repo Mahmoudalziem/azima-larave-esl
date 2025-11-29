@@ -1,9 +1,9 @@
 <?php
 
-namespace Freeswitch\LaravelEsl;
+namespace Azima\LaravelEsl;
 
 use Illuminate\Support\ServiceProvider;
-use Freeswitch\LaravelEsl\Facades\Esl as EslFacade;
+use Azima\LaravelEsl\Facades\Esl as EslFacade;
 
 class LaravelEslServiceProvider extends ServiceProvider
 {

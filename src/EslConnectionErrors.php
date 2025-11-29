@@ -1,6 +1,6 @@
 <?php
 
-namespace Freeswitch\LaravelEsl;
+namespace Azima\LaravelEsl;
 
 enum EslConnectionErrors: int
 {

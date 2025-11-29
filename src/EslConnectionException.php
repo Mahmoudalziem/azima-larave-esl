@@ -1,5 +1,5 @@
 <?php
 
-namespace Freeswitch\LaravelEsl;
+namespace Azima\LaravelEsl;
 
 class EslConnectionException extends \Exception {}

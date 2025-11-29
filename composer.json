@@ -1,13 +1,13 @@
 {
-    "name": "Freeswitch/laravel-esl",
-    "description": "A Laravel package for FreeSWITCH ESL connection.",
+    "name": "Azima/laravel-esl",
+    "description": "A Laravel package for Azima ESL connection.",
     "keywords": [
         "esl",
-        "freeswitch",
+        "Azima",
         "event socket",
         "gsm"
     ],
-    "homepage": "https://github.com/Freeswitch/laravel-esl",
+    "homepage": "https://github.com/Mahmoudalziem/azima-larave-esl",
     "type": "library",
     "license": "MIT",
     "authors": [
@@ -24,16 +24,16 @@
     },
     "autoload": {
         "psr-4": {
-            "Freeswitch\\LaravelEsl\\": "src/"
+            "Azima\\LaravelEsl\\": "src/"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "Freeswitch\\LaravelEsl\\LaravelEslServiceProvider"
+                "Azima\\LaravelEsl\\LaravelEslServiceProvider"
             ],
             "aliases": {
-                "Esl": "Freeswitch\\LaravelEsl\\Facades\\Esl"
+                "Esl": "Azima\\LaravelEsl\\Facades\\Esl"
             }
         }
     },
